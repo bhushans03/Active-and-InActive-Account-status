@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Active & Inactive Accounts">
+        <div class="slds-var-m-around_medium">
+            <div class="slds-grid slds-gutters slds-var-p-bottom_medium">
+                <div class="slds-col">
+                    <lightning-button variant="Brand" title="active"
+                    label="Active" onclick={handleClick}></lightning-button>
+                    </div>
+                <div class="slds-col">
+                <lightning-button variant="destructive" title="Inactive"
+                label="InActive" onclick={handleClick}></lightning-button>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+    <div class='slds-var-m-bottom_medium'></div>
+    <template if:true={active}>
+    <c-account-child-comp selected-value={selected}></c-account-child-comp>
+   </template>
+   <template if:true={inActive}>
+    <c-account-child-comp selected-value={selected}></c-account-child-comp>
+   </template>
+</template>
